@@ -1,0 +1,50 @@
+/* Custom styles for the site */
+body {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(8px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  color: #f0f0f0;
+}
+button {
+  background-color: #25D366;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  color: #e0e0e0;
+}
+#loadingMessages {
+  margin-top: 2rem;
+  color: #e0e0e0;
+}
+#advancedBtn {
+  margin-top: 1.5rem;
+}

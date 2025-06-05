@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Resultados da Verificação</h1>
+    <div class="summary">
+      <i class="fas fa-user icon-large"></i>
+      <p>Número: <span id="numero-consultado"></span></p>
+    </div>
+    <div class="grid">
+      <div class="info-card">
+        <i class="fas fa-signal"></i>
+        <h3>Operadora</h3>
+        <p>Vivo</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Localização</h3>
+        <p>São Paulo - SP</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-check-circle"></i>
+        <h3>Status</h3>
+        <p>Ativo</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-calendar-alt"></i>
+        <h3>Última Verificação</h3>
+        <p>Hoje</p>
+      </div>
+    </div>
+    <div class="espionagem">
+      <h2><i class="fas fa-user-secret"></i> Informações sobre Espionagem</h2>
+      <p>A espionagem de smartphones pode envolver rastreamento de chamadas, acesso a mensagens e localização em tempo real. Em cenários de teste, exibimos dados fictícios para demonstrar as possibilidades.</p>
+      <ul class="spy-list">
+        <li><i class="fas fa-map-marker-alt"></i> Rastreio de localização aproximada.</li>
+        <li><i class="fas fa-comments"></i> Monitoramento de mensagens (WhatsApp, SMS).</li>
+        <li><i class="fas fa-camera"></i> Captura simulada de imagem via câmera frontal.</li>
+        <li><i class="fas fa-microphone"></i> Gravação simulada de áudio ambiente.</li>
+      </ul>
+    </div>
+    <button id="new-query" class="btn-secondary"><i class="fas fa-redo-alt"></i> Nova Consulta</button>
+    <p class="disclaimer">Informações fornecidas apenas para fins de teste. Dados fictícios.</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

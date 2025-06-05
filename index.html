@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificação de WhatsApp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container page1">
+    <div class="card card-index">
+      <i class="fas fa-mobile-alt icone-principal"></i>
+      <h1>Verifique seu Número de Celular</h1>
+      <p>Digite o número no formato <strong>(DDD) 99999-9999</strong> para iniciar.</p>
+      <div class="input-container">
+        <i class="fas fa-phone"></i>
+        <input
+          type="text"
+          id="numero"
+          placeholder="(XX) XXXXX-XXXX"
+          maxlength="15"
+        />
+      </div>
+      <span id="erro-numero" class="mensagem-erro">
+        <i class="fas fa-exclamation-triangle"></i> Formato inválido. Use (DDD) 99999-9999.
+      </span>
+      <button id="btn-iniciar" class="btn-primario">
+        <i class="fas fa-phone"></i> Iniciar Verificação <i class="fas fa-arrow-right icone-direita"></i>
+      </button>
+      <div class="info-secundaria">
+        <i class="fas fa-shield-alt"></i>
+        Seu número é usado apenas para fins de demonstração. Garantimos privacidade.
+      </div>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>

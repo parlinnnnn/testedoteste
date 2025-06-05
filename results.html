@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header><i class="fa fa-chart-line"></i><h2>Resultados da verificação</h2></header>
+    <p>Número analisado: <strong id="number"></strong></p>
+    <div class="cards">
+      <div class="card"><i class="fa fa-clock"></i><p>Último status visto</p></div>
+      <div class="card"><i class="fa fa-users"></i><p>Grupos detectados</p></div>
+      <div class="card"><i class="fa fa-chart-bar"></i><p>Frequência de atividade</p></div>
+    </div>
+    <!-- Seção adicional: Informações sobre espionagem -->
+    <div class="espionagem-info">
+      <h2><i class="fas fa-user-secret"></i> Informações sobre Espionagem</h2>
+      <p>A espionagem de smartphones pode envolver rastreamento de chamadas, acesso a mensagens e localização em tempo real. Em cenários de teste, exibimos dados fictícios para demonstrar as possibilidades.</p>
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i> Rastreio de localização aproximada</li>
+        <li><i class="fas fa-comments"></i> Monitoramento de mensagens (WhatsApp, SMS)</li>
+        <li><i class="fas fa-camera"></i> Captura simulada de imagem via câmera frontal</li>
+        <li><i class="fas fa-microphone"></i> Gravação simulada de áudio ambiente</li>
+      </ul>
+    </div>
+    <div id="geo" class="trust"></div>
+    <div class="video-box">
+      <!-- Vídeo a ser adicionado posteriormente -->
+      <!--
+      <video id="promo" src="vsl.mp4" autoplay muted loop></video>
+      <button id="unmuteBtn">🔊</button>
+      -->
+    </div>
+    <button id="advancedBtn" style="display:none;">Obter Acesso Avançado</button>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>

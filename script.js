@@ -59,9 +59,14 @@ if(document.getElementById('number')){
   // Vídeo e botões
   const video = document.getElementById('promo');
   const unmute = document.getElementById('unmuteBtn');
-  unmute.addEventListener('click', ()=>{
-    video.muted = false;
-    unmute.style.display = 'none';
-  });
-  setTimeout(()=>{ document.getElementById('advancedBtn').style.display='block'; },30000);
+  if (video && unmute) {
+    unmute.addEventListener('click', () => {
+      video.muted = false;
+      unmute.style.display = 'none';
+    });
+  }
+  const btnAdv = document.getElementById('advancedBtn');
+  if (btnAdv) {
+    setTimeout(() => { btnAdv.style.display = 'block'; }, 30000);
+  }
 }

@@ -3,46 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resultados da Verificação</title>
+  <title>Resultados</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container results-container">
-    <div class="summary">
-      <i class="fa fa-user-circle" style="font-size:3rem;color:var(--cor-primaria);"></i>
-      <h3 id="num"></h3>
-    </div>
+  <div class="container">
+    <header><i class="fa fa-chart-line"></i><h2>Resultados da verificação</h2></header>
+    <p>Número analisado: <strong id="number"></strong></p>
     <div class="cards">
-      <h2>Resultados da Verificação</h2>
-      <div class="card">
-        <i class="fa fa-signal"></i>
-        <h4>Operadora</h4>
-        <p>Vivo</p>
-      </div>
-      <div class="card">
-        <i class="fa fa-map-marker-alt"></i>
-        <h4>Localização</h4>
-        <p>São Paulo, SP</p>
-      </div>
-      <div class="card">
-        <i class="fa fa-check-circle"></i>
-        <h4>Status</h4>
-        <p>Ativo</p>
-      </div>
-      <button id="new" style="background-color:var(--cor-secundaria);">Nova Consulta</button>
-      <p class="disclaimer">Informações fornecidas apenas para fins de teste. Dados fictícios.</p>
+      <div class="card"><i class="fa fa-clock"></i><p>Último status visto</p></div>
+      <div class="card"><i class="fa fa-users"></i><p>Grupos detectados</p></div>
+      <div class="card"><i class="fa fa-chart-bar"></i><p>Frequência de atividade</p></div>
     </div>
+    <div id="geo" class="trust"></div>
+    <div class="video-box">
+      <video id="promo" src="vsl.mp4" autoplay muted loop></video>
+      <button id="unmuteBtn">🔊</button>
+    </div>
+    <button id="advancedBtn" style="display:none;">Obter Acesso Avançado</button>
   </div>
-<script>
-const number = localStorage.getItem('phone_number') || '';
-document.getElementById('num').textContent = number;
-document.getElementById('new').addEventListener('click', ()=>{
-  window.location.href = 'index.html';
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>

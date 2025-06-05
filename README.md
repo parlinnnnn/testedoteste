@@ -6,7 +6,7 @@ Este repositório contém uma landing page responsiva que permite verificar a at
 - `loading.html` – tela de carregamento com animação
 - `results.html` – apresenta resultados demonstrativos
 
-Para exibir um vídeo na página de resultados, coloque o arquivo `vsl.mp4` dentro da pasta `public_html` (opcional).
+Para exibir um vídeo na página de resultados, coloque o arquivo `vsl.mp4` na raiz do repositório (opcional).
 
 ## Hospedagem no GitHub Pages
 Habilite o GitHub Pages nas configurações do repositório usando a branch `main` como origem. Depois de alguns minutos, o site ficará disponível em `https://<usuario>.github.io/<repo>/`.

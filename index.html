@@ -1,50 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verifique seu Número de Celular</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificação de WhatsApp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>Verifique seu Número de Celular</h1>
+    <header><i class="fa fa-shield-alt"></i><h1>Verifique a atividade do WhatsApp</h1></header>
     <form id="phoneForm">
       <div class="input-icon">
         <i class="fa fa-phone"></i>
-        <input id="phone" type="tel" placeholder="(DDD) 99999-9999" autocomplete="tel" required>
+        <input id="phone" type="tel" placeholder="(99) 99999-9999" autocomplete="tel" required>
       </div>
-      <span id="error" class="error">Insira um número válido (DDD) 99999-9999</span>
-      <button type="submit">Iniciar Verificação <i class="fa fa-arrow-right"></i></button>
+      <div id="error" class="error">Insira um número válido no formato (99) 99999-9999</div>
+      <button type="submit">Iniciar Verificação</button>
     </form>
+    <div class="steps">
+      <div class="step"><i class="fa fa-phone"></i><p>Digite o número</p></div>
+      <div class="step"><i class="fa fa-search"></i><p>Análise em andamento</p></div>
+      <div class="step"><i class="fa fa-chart-column"></i><p>Veja os dados</p></div>
+    </div>
+    <div class="trust">Sistema confidencial • Seguro e 100% anônimo • Mais de 95 mil verificações</div>
   </div>
-<script>
-const input = document.getElementById('phone');
-function maskPhone(e){
-  let v="" + e.target.value.replace(/[^0-9]/g, "").slice(0,11);
-  if(v.length > 2) v = "(" + v.slice(0,2) + ") " + v.slice(2);
-  if(v.length > 9) v = "(" + v.slice(0,2) + ") " + v.slice(2,7) + "-" + v.slice(7);
-  e.target.value = v;
-}
-input.addEventListener('input', maskPhone);
-input.addEventListener("input", ()=>{document.getElementById("error").style.display="none";});
-
-
-document.getElementById('phoneForm').addEventListener('submit', function(ev){
-  ev.preventDefault();
-  const regex = /^\(\d{2}\) \d{5}-\d{4}$/;
-  const value = input.value.trim();
-  if(!regex.test(value)) {
-    document.getElementById('error').style.display = 'block';
-    return;
-  }
-  localStorage.setItem('phone_number', value);
-  window.location.href = 'loading.html';
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>

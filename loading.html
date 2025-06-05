@@ -3,26 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Analisando...</title>
+  <title>Processando...</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container" id="loadingBox">
-    <h2>Estamos verificando o número <span id="num"></span>...</h2>
+  <div class="container">
+    <header><i class="fa fa-search"></i><h2>Analisando <span id="num"></span></h2></header>
     <div class="loader"></div>
-    <div class="tips">
-      <p><i class="fa fa-lock"></i> Nunca compartilhe seu código de acesso.</p>
-      <p><i class="fa fa-shield"></i> Mantenha sua conta protegida.</p>
-    </div>
+    <div class="status" id="statusMsg"></div>
   </div>
-<script>
-const number = localStorage.getItem('phone_number') || '';
-document.getElementById('num').textContent = number;
-setTimeout(()=>{ window.location.href = 'results.html'; },15000);
-</script>
+<script src="script.js"></script>
 </body>
 </html>

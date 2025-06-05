@@ -1,2 +1,2 @@
-# Ignore video files
-public_html/*.mp4
+# Ignore video files to keep repository lightweight
+*.mp4

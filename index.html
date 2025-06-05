@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Atividade do WhatsApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" integrity="sha512-dBl86kEekmwgqbZULksXFVdHc+v3zY7NysGEKMluSleqU9jwELyhl725LLJoPLD114F8CbnMD4PlzyBbs6k8lw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div class="glass" style="max-width: 420px; margin:auto; margin-top:3rem;">
+    <div class="header">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h1>InvestigaZap</h1>
+    </div>
+    <h2>Verifique a atividade</h2>
+    <p class="subtitle">Digite o número que deseja investigar de forma confidencial e anônima.</p>
+    <input id="phone" type="tel" placeholder="Número a ser investigado" style="width:100%; padding:0.5rem; border-radius:0.5rem; margin-top:1rem;" />
+    <button id="startBtn" style="width:100%; margin-top:1rem;">Iniciar verificação</button>
+    <div style="margin-top:2rem;">
+        <div class="step"><i class="fa-solid fa-phone"></i> Digite o número</div>
+        <div class="step"><i class="fa-solid fa-magnifying-glass"></i> Realizamos a verificação</div>
+        <div class="step"><i class="fa-solid fa-chart-column"></i> Você vê os dados de atividade</div>
+    </div>
+    <ul style="margin-top:1.5rem; color:#ccc; list-style:none; padding:0;">
+        <li><i class="fa-solid fa-shield-halved"></i> Consulta segura e anônima</li>
+        <li><i class="fa-solid fa-user-check"></i> Mais de 95.000 números verificados</li>
+        <li><i class="fa-solid fa-calendar-check"></i> Sistema atualizado em 3 de junho de 2025</li>
+    </ul>
+</div>
+<script>
+// Mask phone input (99) 99999-9999
+document.getElementById('phone').addEventListener('input', function(e){
+    let v = e.target.value.replace(/\D/g, '').slice(0,11);
+    if(v.length > 2) v = '(' + v.slice(0,2) + ') ' + v.slice(2);
+    if(v.length > 10) v = v.slice(0,10) + '-' + v.slice(10);
+    e.target.value = v;
+});
+// Save number and go to loading page
+ document.getElementById('startBtn').addEventListener('click', function(){
+     const phone = document.getElementById('phone').value.trim();
+     if(phone){
+         localStorage.setItem('wa_number', phone);
+         window.location.href = 'loading.html';
+     }
+ });
+</script>
+</body>
+</html>

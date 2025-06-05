@@ -1,83 +1,152 @@
-/* Custom styles for the site */
+:root {
+  --cor-primaria: #0066cc;
+  --cor-secundaria: #28a745;
+  --cor-fundo-gradient-inicial: #e6f2ff;
+  --cor-texto-principal: #333333;
+  --cor-texto-secundario: #666666;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0f2e17, #1a1a1a);
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to bottom, var(--cor-fundo-gradient-inicial), #ffffff);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  color: #f0f0f0;
-}
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 0.75rem;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  color: #f0f0f0;
-}
-button {
-  background-color: #25D366;
-  color: #fff;
-  border: none;
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s, transform 0.2s;
-}
-button:hover:not(:disabled) {
-  background-color: #1ea654;
-  transform: scale(1.02);
-}
-button:disabled {
-  opacity: 0.6;
-  cursor: default;
-}
-.header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  margin: -1.5rem -1.5rem 1rem -1.5rem;
-  padding: 0.75rem;
-  background-color: #25D366;
-  color: #fff;
-  border-radius: 0.75rem 0.75rem 0 0;
-}
-.step {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-  color: #e0e0e0;
-}
-#index .subtitle, .subtitle {
-  margin-top: 0.5rem;
-  color: #ccc;
-  font-size: 0.9rem;
-}
-#loadingMessages {
-  margin-top: 2rem;
-  color: #e0e0e0;
-}
-#advancedBtn {
-  margin-top: 1.5rem;
+  color: var(--cor-texto-principal);
 }
 
-.video-wrapper {
+.container {
+  width: 90%;
+  max-width: 420px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: var(--cor-texto-principal);
+}
+
+.input-icon {
   position: relative;
   margin-top: 1rem;
 }
 
-#unmuteBtn {
+.input-icon i {
   position: absolute;
+  left: 10px;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #25D366;
-  border: none;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+input[type="tel"] {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+input[type="tel"]:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+}
+
+.error {
+  display: none;
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+button {
+  margin-top: 1rem;
+  background-color: var(--cor-primaria);
   color: #fff;
-  border-radius: 50%;
+  border: none;
   padding: 0.75rem;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  width: 100%;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+.loader {
+  border: 4px solid #eee;
+  border-top-color: var(--cor-primaria);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+  margin: 1.5rem auto;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.tips {
+  margin-top: 1rem;
+  color: var(--cor-texto-secundario);
+  font-size: 0.9rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  flex: 1 1 100%;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.card i {
+  font-size: 1.5rem;
+  color: var(--cor-primaria);
+  margin-bottom: 0.5rem;
+}
+
+.disclaimer {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--cor-texto-secundario);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .results-container {
+    display: flex;
+    gap: 2rem;
+  }
+  .summary {
+    flex: 0 0 40%;
+    text-align: center;
+  }
+  .cards {
+    flex: 1;
+  }
 }

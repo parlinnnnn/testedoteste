@@ -1,63 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" integrity="sha512-dBl86kEekmwgqbZULksXFVdHc+v3zY7NysGEKMluSleqU9jwELyhl725LLJoPLD114F8CbnMD4PlzyBbs6k8lw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados da Verificação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="glass" style="max-width: 420px; margin:auto; margin-top:3rem;">
-    <div class="header">
-        <i class="fa-solid fa-shield-halved"></i>
-        <h1>InvestigaZap</h1>
+  <div class="container results-container">
+    <div class="summary">
+      <i class="fa fa-user-circle" style="font-size:3rem;color:var(--cor-primaria);"></i>
+      <h3 id="num"></h3>
     </div>
-    <h2 id="phoneHeader"></h2>
-    <p class="subtitle">Confira as informações encontradas:</p>
-    <div>
-        <h3>Análise Completa</h3>
-        <ul>
-            <li><i class="fa-solid fa-message"></i> Mensagens suspeitas: <span id="msgs">n/d</span></li>
-            <li><i class="fa-solid fa-image"></i> Imagens suspeitas: <span id="imgs">n/d</span></li>
-            <li><i class="fa-solid fa-location-dot"></i> Localizações suspeitas: <span id="locs">n/d</span></li>
-        </ul>
+    <div class="cards">
+      <h2>Resultados da Verificação</h2>
+      <div class="card">
+        <i class="fa fa-signal"></i>
+        <h4>Operadora</h4>
+        <p>Vivo</p>
+      </div>
+      <div class="card">
+        <i class="fa fa-map-marker-alt"></i>
+        <h4>Localização</h4>
+        <p>São Paulo, SP</p>
+      </div>
+      <div class="card">
+        <i class="fa fa-check-circle"></i>
+        <h4>Status</h4>
+        <p>Ativo</p>
+      </div>
+      <button id="new" style="background-color:var(--cor-secundaria);">Nova Consulta</button>
+      <p class="disclaimer">Informações fornecidas apenas para fins de teste. Dados fictícios.</p>
     </div>
-    <div id="geo" style="margin-top:1rem;"></div>
-    <div id="videoPlaceholder" style="width:100%;height:200px;margin-top:1rem;border-radius:0.5rem;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;color:#888;border:2px dashed #444;">Vídeo será adicionado aqui</div>
-    <button id="advancedBtn" style="display:none; width:100%;">🔓 Obter Acesso Avançado</button>
-</div>
+  </div>
 <script>
-// Carrega o número informado
-const number = localStorage.getItem('wa_number') || 'desconhecido';
-document.getElementById('phoneHeader').innerHTML = `<i class="fa-solid fa-phone"></i> ${number}`;
-// Dados de exemplo
-function fake() {
-  const msgOps = ["3 mensagens com teor sexual","Nenhuma mensagem suspeita","Conteúdo íntimo detectado"];
-  const imgOps = ["2 imagens suspeitas","Sem imagens suspeitas","Fotos comprometedoras encontradas"];
-  const locOps = ["Motéis próximos","Casas de massagem localizadas","Locais suspeitos visitados"];
-  document.getElementById("msgs").textContent = msgOps[Math.floor(Math.random()*msgOps.length)];
-  document.getElementById("imgs").textContent = imgOps[Math.floor(Math.random()*imgOps.length)];
-  document.getElementById("locs").textContent = locOps[Math.floor(Math.random()*locOps.length)];
-}
-fake();
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(function(pos) {
-    const { latitude, longitude } = pos.coords;
-    document.getElementById("geo").innerHTML = `<i class="fa-solid fa-location-dot"></i> Sua localização aproximada: ${latitude.toFixed(3)}, ${longitude.toFixed(3)}`;
-  }, function() {
-    document.getElementById("geo").textContent = "Localização não autorizada";
-  });
-} else {
-  document.getElementById("geo").textContent = "Localização não suportada";
-}
-setTimeout(function(){
-  document.getElementById('advancedBtn').style.display='block';
-},30000);
-
+const number = localStorage.getItem('phone_number') || '';
+document.getElementById('num').textContent = number;
+document.getElementById('new').addEventListener('click', ()=>{
+  window.location.href = 'index.html';
+});
 </script>
 </body>
 </html>

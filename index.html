@@ -11,22 +11,31 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <header><i class="fa fa-shield-alt"></i><h1>Verifique a atividade do WhatsApp</h1></header>
-    <form id="phoneForm">
-      <div class="input-icon">
-        <i class="fa fa-phone"></i>
-        <input id="phone" type="tel" placeholder="(99) 99999-9999" autocomplete="tel" required>
+  <div class="container page1">
+    <div class="card card-index">
+      <i class="fas fa-mobile-alt icone-principal"></i>
+      <h1>Verifique seu Número de Celular</h1>
+      <p>Digite o número no formato <strong>(DDD) 99999-9999</strong> para iniciar.</p>
+      <div class="input-container">
+        <i class="fas fa-phone"></i>
+        <input
+          type="text"
+          id="numero"
+          placeholder="(XX) XXXXX-XXXX"
+          maxlength="15"
+        />
       </div>
-      <div id="error" class="error">Insira um número válido no formato (99) 99999-9999</div>
-      <button type="submit">Iniciar Verificação</button>
-    </form>
-    <div class="steps">
-      <div class="step"><i class="fa fa-phone"></i><p>Digite o número</p></div>
-      <div class="step"><i class="fa fa-search"></i><p>Análise em andamento</p></div>
-      <div class="step"><i class="fa fa-chart-column"></i><p>Veja os dados</p></div>
+      <span id="erro-numero" class="mensagem-erro">
+        <i class="fas fa-exclamation-triangle"></i> Formato inválido. Use (DDD) 99999-9999.
+      </span>
+      <button id="btn-iniciar" class="btn-primario">
+        <i class="fas fa-phone"></i> Iniciar Verificação <i class="fas fa-arrow-right icone-direita"></i>
+      </button>
+      <div class="info-secundaria">
+        <i class="fas fa-shield-alt"></i>
+        Seu número é usado apenas para fins de demonstração. Garantimos privacidade.
+      </div>
     </div>
-    <div class="trust">Sistema confidencial • Seguro e 100% anônimo • Mais de 95 mil verificações</div>
   </div>
 <script src="script.js"></script>
 </body>

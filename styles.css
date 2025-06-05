@@ -3,6 +3,9 @@
   --cor-fundo: rgba(255, 255, 255, 0.1);
   --cor-texto: #ffffff;
   --cor-bg: #111418;
+  --cor-fundo-light: #f9f9f9;
+  --cor-texto-principal: #333333;
+  --cor-texto-secundario: #666666;
 }
 
 * {
@@ -44,12 +47,12 @@ h1, h2 {
   color: var(--cor-texto);
 }
 
-.input-icon {
+.input-container {
   position: relative;
   margin-bottom: 1rem;
 }
 
-.input-icon i {
+.input-container i {
   position: absolute;
   left: 10px;
   top: 50%;
@@ -199,4 +202,93 @@ button:hover {
   .cards {
     grid-template-columns: 1fr;
   }
+}
+
+/* ===================== Página 1 (Atualizado) ===================== */
+.card-index {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.icone-principal {
+  font-size: 3rem;
+  color: var(--cor-primaria);
+  margin-bottom: 1rem;
+}
+
+.btn-primario {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-primario:hover {
+  background-color: #005bb5;
+}
+
+.info-secundaria {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--cor-texto-secundario);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* ===================== Página 3: Informações de Espionagem ===================== */
+.espionagem-info {
+  margin-top: 2rem;
+  background-color: var(--cor-fundo-light);
+  padding: 1.5rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.espionagem-info h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cor-texto-principal);
+}
+
+.espionagem-info p {
+  font-size: 0.95rem;
+  color: var(--cor-texto-secundario);
+  margin-bottom: 1rem;
+}
+
+.espionagem-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.espionagem-info li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--cor-texto-secundario);
+}
+
+.espionagem-info i {
+  color: var(--cor-primaria);
 }

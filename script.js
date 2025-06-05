@@ -15,14 +15,14 @@ function getNumber(){
 }
 
 // Página Inicial
-if(document.getElementById('phone')){
-  const input = document.getElementById('phone');
-  input.addEventListener('input', ()=>{ maskPhone(input); document.getElementById('error').style.display='none'; });
-  document.getElementById('phoneForm').addEventListener('submit', (e)=>{
+if(document.getElementById('numero')){
+  const input = document.getElementById('numero');
+  input.addEventListener('input', ()=>{ maskPhone(input); document.getElementById('erro-numero').style.display='none'; });
+  document.getElementById('btn-iniciar').addEventListener('click', (e)=>{
     e.preventDefault();
     const regex = /^\(\d{2}\) \d{5}-\d{4}$/;
     if(!regex.test(input.value.trim())){
-      document.getElementById('error').style.display='block';
+      document.getElementById('erro-numero').style.display='block';
       return;
     }
     saveNumber(input.value.trim());

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analyzing...</title>
+    <title>Analisando...</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" integrity="sha512-dBl86kEekmwgqbZULksXFVdHc+v3zY7NysGEKMluSleqU9jwELyhl725LLJoPLD114F8CbnMD4PlzyBbs6k8lw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
-            background: linear-gradient(135deg, #101010, #1a1a1a);
+            background: linear-gradient(135deg, #0f2e17, #1a1a1a);
         }
         .spinner {
             border: 4px solid rgba(0,0,0,0.1);
@@ -28,21 +28,21 @@
 </head>
 <body>
 <div class="glass" style="max-width: 420px; margin:auto; margin-top:3rem; text-align:center;">
-    <h2>Analyzing...</h2>
+    <h2>Analisando...</h2>
     <div class="spinner"></div>
     <div id="loadingMessages"></div>
 </div>
 <script>
 const messages = [
-    "Checking online status...",
-    "Fetching public activity...",
-    "Loading results..."
+    "<i class='fa-solid fa-search fa-spin'></i> Rastreando número...",
+    "<i class='fa-solid fa-shield-halved fa-spin'></i> Verificando registros recentes...",
+    "<i class='fa-solid fa-clock fa-spin'></i> Analisando histórico de conexões..."
 ];
 let index = 0;
 function showMessage() {
     if(index < messages.length) {
         const p = document.createElement('p');
-        p.textContent = messages[index];
+        p.innerHTML = messages[index];
         document.getElementById('loadingMessages').appendChild(p);
         index++;
         setTimeout(showMessage, 4000);

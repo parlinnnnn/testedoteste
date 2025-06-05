@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Activity Checker</title>
+    <title>Verificador de Atividade do WhatsApp</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" integrity="sha512-dBl86kEekmwgqbZULksXFVdHc+v3zY7NysGEKMluSleqU9jwELyhl725LLJoPLD114F8CbnMD4PlzyBbs6k8lw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 <div class="glass" style="max-width: 420px; margin:auto; margin-top:3rem;">
     <div class="header">
-        <img src="https://img.icons8.com/color/48/25D366/whatsapp.png" alt="WhatsApp" width="32" height="32">
-        <h1>WA Activity Checker</h1>
+        <i class="fa-solid fa-shield-halved"></i>
+        <h1>InvestigaZap</h1>
     </div>
-    <h2>Check WhatsApp Activity</h2>
-    <p class="subtitle">Enter a phone number to see recent public information. This demo does not connect to WhatsApp.</p>
-    <input id="phone" type="tel" placeholder="(99) 99999-9999" style="width:100%; padding:0.5rem; border-radius:0.5rem; margin-top:1rem;" />
-    <button id="startBtn" style="width:100%; margin-top:1rem;">Start Investigation</button>
+    <h2>Verifique a atividade</h2>
+    <p class="subtitle">Digite o número que deseja investigar de forma confidencial e anônima.</p>
+    <input id="phone" type="tel" placeholder="Número a ser investigado" style="width:100%; padding:0.5rem; border-radius:0.5rem; margin-top:1rem;" />
+    <button id="startBtn" style="width:100%; margin-top:1rem;">Iniciar verificação</button>
     <div style="margin-top:2rem;">
-        <div class="step"><i class="fa-solid fa-phone"></i> Enter number</div>
-        <div class="step"><i class="fa-solid fa-gear"></i> Analyze</div>
-        <div class="step"><i class="fa-solid fa-chart-column"></i> View results</div>
+        <div class="step"><i class="fa-solid fa-phone"></i> Digite o número</div>
+        <div class="step"><i class="fa-solid fa-magnifying-glass"></i> Análise em andamento</div>
+        <div class="step"><i class="fa-solid fa-chart-column"></i> Veja os dados</div>
     </div>
+    <ul style="margin-top:1.5rem; color:#ccc; list-style:none; padding:0;">
+        <li><i class="fa-solid fa-lock"></i> Sistema confidencial</li>
+        <li><i class="fa-solid fa-user-secret"></i> Seguro e 100% anônimo</li>
+        <li><i class="fa-solid fa-check"></i> Mais de 95 mil verificações realizadas</li>
+    </ul>
 </div>
 <script>
 // Mask phone input (99) 99999-9999

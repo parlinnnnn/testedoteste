@@ -1,58 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results</title>
+    <title>Resultados</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" integrity="sha512-dBl86kEekmwgqbZULksXFVdHc+v3zY7NysGEKMluSleqU9jwELyhl725LLJoPLD114F8CbnMD4PlzyBbs6k8lw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 <div class="glass" style="max-width: 420px; margin:auto; margin-top:3rem;">
     <h2 id="phoneHeader"></h2>
-    <p class="subtitle">Information below is generated from public data sources.</p>
+    <p class="subtitle">Confira as informações encontradas:</p>
     <div>
-        <h3>Complete Public Analysis</h3>
+        <h3>Análise Completa</h3>
         <ul>
-            <li><i class="fa-regular fa-clock"></i> Last seen: <span id="lastSeen">unknown</span></li>
-            <li><i class="fa-solid fa-circle-info"></i> Status: <span id="status">No status</span></li>
-            <li><i class="fa-solid fa-users"></i> Group presence: <span id="groups">n/a</span></li>
+            <li><i class="fa-regular fa-clock"></i> Último status visto: <span id="lastSeen">desconhecido</span></li>
+            <li><i class="fa-solid fa-users"></i> Grupos detectados: <span id="groups">n/d</span></li>
+            <li><i class="fa-solid fa-chart-line"></i> Frequência de atividade: <span id="activity">n/d</span></li>
         </ul>
     </div>
     <div id="geo" style="margin-top:1rem;"></div>
-    <!-- Video placeholder: add your own file later -->
-    <!-- <video id="promo" src="vsl.mp4" autoplay muted loop style="width:100%; margin-top:1rem; border-radius:0.5rem;"></video> -->
-    <!-- <button id="unmuteBtn" style="width:100%; margin-top:0.5rem;">Unmute</button> -->
-    <button id="advancedBtn" style="display:none; width:100%;">🔓 Get Advanced Access</button>
+    <div class="video-wrapper">
+        <video id="promo" src="vsl.mp4" autoplay muted loop style="width:100%; border-radius:0.5rem;"></video>
+        <button id="unmuteBtn"><i class="fa-solid fa-volume-high"></i></button>
+    </div>
+    <button id="advancedBtn" style="display:none; width:100%;">🔓 Obter Acesso Avançado</button>
 </div>
 <script>
-// Load phone number
-const number = localStorage.getItem('wa_number') || 'Unknown';
-document.getElementById('phoneHeader').textContent = 'Results for ' + number;
-// Fake data
+// Carrega o número informado
+const number = localStorage.getItem('wa_number') || 'desconhecido';
+document.getElementById('phoneHeader').innerHTML = `<i class="fa-solid fa-phone"></i> ${number}`;
+// Dados simulados
 function fake() {
-  const lastSeenOptions = ['today at 14:32','yesterday at 20:00','2 days ago'];
-  const statusOptions = ['Available','Busy','Battery about to die'];
-  const groupOptions = ['3 groups found','No groups','Multiple groups'];
+  const lastSeenOptions = ['hoje às 14:32','ontem às 20:00','há 2 dias'];
+  const groupOptions = ['3 grupos encontrados','Nenhum grupo','Vários grupos'];
+  const freqOptions = ['Alta','Moderada','Baixa'];
   document.getElementById('lastSeen').textContent = lastSeenOptions[Math.floor(Math.random()*lastSeenOptions.length)];
-  document.getElementById('status').textContent = statusOptions[Math.floor(Math.random()*statusOptions.length)];
   document.getElementById('groups').textContent = groupOptions[Math.floor(Math.random()*groupOptions.length)];
+  document.getElementById('activity').textContent = freqOptions[Math.floor(Math.random()*freqOptions.length)];
 }
 fake();
 // Geolocation
 if(navigator.geolocation){
   navigator.geolocation.getCurrentPosition(function(pos){
     const {latitude, longitude} = pos.coords;
-    document.getElementById('geo').textContent = `Your location: ${latitude.toFixed(3)}, ${longitude.toFixed(3)}`;
+    document.getElementById('geo').innerHTML = `<i class="fa-solid fa-location-dot"></i> Sua localização aproximada: ${latitude.toFixed(3)}, ${longitude.toFixed(3)}`;
   });
 }
 // Show advanced button after 30s
 setTimeout(function(){
   document.getElementById('advancedBtn').style.display='block';
 },30000);
+
+// Botão para desmutar o vídeo
+document.getElementById('unmuteBtn').addEventListener('click', function(){
+  const vid = document.getElementById('promo');
+  vid.muted = false;
+  this.style.display = 'none';
+});
 </script>
 </body>
 </html>

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" integrity="sha512-dBl86kEekmwgqbZULksXFVdHc+v3zY7NysGEKMluSleqU9jwELyhl725LLJoPLD114F8CbnMD4PlzyBbs6k8lw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 <div class="glass" style="max-width: 420px; margin:auto; margin-top:3rem;">
@@ -16,15 +17,23 @@
         <h1>WA Activity Checker</h1>
     </div>
     <h2>Check WhatsApp Activity</h2>
+    <p class="subtitle">Enter a phone number to see recent public information. This demo does not connect to WhatsApp.</p>
     <input id="phone" type="tel" placeholder="(99) 99999-9999" style="width:100%; padding:0.5rem; border-radius:0.5rem; margin-top:1rem;" />
     <button id="startBtn" style="width:100%; margin-top:1rem;">Start Investigation</button>
     <div style="margin-top:2rem;">
-        <div class="step">1️⃣ Enter number</div>
-        <div class="step">2️⃣ Analyze</div>
-        <div class="step">3️⃣ View results</div>
+        <div class="step"><i class="fa-solid fa-phone"></i> Enter number</div>
+        <div class="step"><i class="fa-solid fa-gear"></i> Analyze</div>
+        <div class="step"><i class="fa-solid fa-chart-column"></i> View results</div>
     </div>
 </div>
 <script>
+// Mask phone input (99) 99999-9999
+document.getElementById('phone').addEventListener('input', function(e){
+    let v = e.target.value.replace(/\D/g, '').slice(0,11);
+    if(v.length > 2) v = '(' + v.slice(0,2) + ') ' + v.slice(2);
+    if(v.length > 10) v = v.slice(0,10) + '-' + v.slice(10);
+    e.target.value = v;
+});
 // Save number and go to loading page
  document.getElementById('startBtn').addEventListener('click', function(){
      const phone = document.getElementById('phone').value.trim();

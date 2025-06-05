@@ -11,3 +11,10 @@ All files are self-contained and use vanilla HTML, CSS and JavaScript. To host o
 **GitHub Pages**, enable Pages in your repository settings and choose the main
 branch as the source. The site will then be available at
 `https://<username>.github.io/<repo>/`.
+
+To test locally without additional dependencies, run a simple HTTP server:
+
+```bash
+python3 -m http.server
+```
+Then open `http://localhost:8000` in your browser.

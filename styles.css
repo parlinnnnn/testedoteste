@@ -1,11 +1,11 @@
 /* Custom styles for the site */
 body {
   font-family: 'Inter', 'Poppins', sans-serif;
-  background: rgba(0,0,0,0.8);
-  backdrop-filter: blur(8px);
+  background: linear-gradient(135deg, #101010, #1a1a1a);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  color: #f0f0f0;
 }
 .glass {
   background: rgba(255, 255, 255, 0.05);
@@ -40,6 +40,11 @@ button:disabled {
   gap: 0.5rem;
   margin-top: 0.5rem;
   color: #e0e0e0;
+}
+#index .subtitle, .subtitle {
+  margin-top: 0.5rem;
+  color: #ccc;
+  font-size: 0.9rem;
 }
 #loadingMessages {
   margin-top: 2rem;
